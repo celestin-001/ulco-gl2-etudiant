@@ -8,13 +8,12 @@
 
 class ReportFile{
 
-    private:
-        
-        std::ofstream _ofs;
+    
 
     public:
-
-        void reportFile(const Board &b) {
+       
+        void reportFile(const Board &b,const std::string & filename) {
+            std::ofstream _ofs(filename);
             for (const std::string & item : b.getItems())
                 _ofs << item << std::endl;
             _ofs << std::endl;
