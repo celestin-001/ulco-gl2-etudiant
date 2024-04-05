@@ -1,8 +1,12 @@
 #include <hv/WebSocketClient.h>
 
+#include "Net.hpp"
 #include <chrono>
 #include <iostream>
 #include <thread>
+
+
+
 
 int main(int argc, char** argv) {
 
@@ -17,11 +21,25 @@ int main(int argc, char** argv) {
         std::cout << "disconnected" << std::endl;
         exit(0);
     };
+
+    
     ws.open("ws://127.0.0.1:9000");
+    while (true) {
+        
+        std::string input;
+        std::getline(std::cin, input);
+        
+        ws.send(input);
+        
+    }
+    
+    
 
     while (true) {
         std::this_thread::sleep_for(std::chrono::milliseconds(200));
     }
+
+    
 
     return 0;
 }
