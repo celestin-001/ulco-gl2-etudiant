@@ -30,3 +30,13 @@ TEST_CASE("Affichage de la grille") {
     REQUIRE(oss.str() == expected );
     
 }
+
+
+TEST_CASE("Jouer Coup") { 
+    Jeu jeu;
+    int i = 0;
+    int j = 0;
+    jeu.jouer(i,j);
+    REQUIRE(jeu.getCell(i,j) == Cell::Rouge );
+    
+}
