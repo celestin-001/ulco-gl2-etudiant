@@ -40,3 +40,15 @@ TEST_CASE("Jouer Coup") {
     REQUIRE(jeu.getCell(i,j) == Cell::Rouge );
     
 }
+
+TEST_CASE("Victoire") { 
+    Jeu jeu;
+    
+    jeu.jouer(0,0);
+    jeu.jouer(1,1);
+    jeu.jouer(0,1);
+    jeu.jouer(1,0);
+    jeu.jouer(0,2);
+    REQUIRE(jeu.getStatus() == Status::RougeGagne );
+    
+}

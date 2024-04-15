@@ -108,3 +108,16 @@ void Jeu::raz() {
     }
 }
 
+void Jeu::detectionVictoire(){
+    switch (getStatus()){
+        case Status::RougeGagne:
+            std::cout<<"Rouge Gagne"<<std::endl;
+            break;
+        case Status::VertGagne:
+             std::cout<<"Vert Gagne"<<std::endl;
+            break;
+    }
+    
+}
+
+
