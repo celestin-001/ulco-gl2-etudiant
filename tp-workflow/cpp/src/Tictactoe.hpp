@@ -36,7 +36,7 @@ class Jeu {
         // Réinitialise le jeu.
         void raz();
         void detectionVictoire();
-        
+        void detectionEgalite();
 };
 
 std::ostream & operator<<(std::ostream & os, const Jeu & jeu);

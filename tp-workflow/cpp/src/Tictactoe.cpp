@@ -120,4 +120,12 @@ void Jeu::detectionVictoire(){
     
 }
 
+void Jeu::detectionEgalite(){
+    switch (getStatus()){
+        case Status::Egalite:
+            std::cout<<"Match nul Egalité"<<std::endl;
+            break;
+    }
+    
+}
 

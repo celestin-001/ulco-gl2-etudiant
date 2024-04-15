@@ -52,3 +52,16 @@ TEST_CASE("Victoire") {
     REQUIRE(jeu.getStatus() == Status::RougeGagne );
     
 }
+
+TEST_CASE("Egalité") { 
+    Jeu jeu;
+    
+    for(int i=0; i<3;i++){
+        for(int j=0; j<3;j++){
+            jeu.jouer(i,j);
+        }
+    }
+    
+    REQUIRE(jeu.getStatus() == Status::Egalite);
+    
+}
