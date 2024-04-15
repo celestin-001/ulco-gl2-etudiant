@@ -5,6 +5,7 @@ Jeu::Jeu() {
 }
 
 Status Jeu::getStatus() const {
+<<<<<<< HEAD
     
     for (int i = 0; i < 3; ++i) {
             // Vérification des lignes
@@ -53,6 +54,9 @@ Status Jeu::getStatus() const {
             }
         }
         return (countRouge <= countVert) ? Status::RougeJoue : Status::VertJoue;
+=======
+   return Status::RougeJoue;
+>>>>>>> 17c5fb9e52aa17b38d94772f1bcad76571b4e900
 }
 
 Cell Jeu::getCell(int i, int j) const {
