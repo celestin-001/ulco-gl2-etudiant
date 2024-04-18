@@ -136,13 +136,14 @@ bool Jeu::detectionEgalite(){
 void Jeu::saisirCoup(){
 
     int i, j;
+    if(getStatus()==Status::RougeJoue) std::cout<<"Rouge joue"<<std::endl;
+    if(getStatus()==Status::VertJoue) std::cout<<"Vert joue"<<std::endl;
     std::cout<<"Saisir un coup n° ligne et n° colonne : ";
     std::cin>>i>>j;
     std::cout<<std::endl;
     
-    if(getStatus()!=Status::Egalite && getStatus()!=Status::RougeGagne && getStatus()!=Status::VertGagne){
-        jouer(i,j);
-    }
+    jouer(i,j);
+   
     
 }
 
