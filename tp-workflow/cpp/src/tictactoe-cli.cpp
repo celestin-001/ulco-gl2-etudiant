@@ -5,9 +5,11 @@ using namespace std;
 int main() {
 
     Jeu jeu;
-    cout <<jeu << endl;
+    /*cout <<jeu << endl;
     jeu.jouer(0,0);
     jeu.jouer(0,1);
+    cout <<jeu << endl;*/
+    jeu.saisirCoup();
     cout <<jeu << endl;
 
     return 0;

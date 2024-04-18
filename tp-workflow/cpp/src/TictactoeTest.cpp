@@ -56,12 +56,23 @@ TEST_CASE("Victoire") {
 TEST_CASE("Egalité") { 
     Jeu jeu;
     
-    for(int i=0; i<3;i++){
-        for(int j=0; j<3;j++){
-            jeu.jouer(i,j);
-        }
-    }
+    jeu.jouer(0,0);
+    jeu.jouer(0,2);
+    jeu.jouer(0,1);
+    jeu.jouer(1,0);
+    jeu.jouer(1,1);
+    jeu.jouer(1,2);
+    jeu.jouer(2,0);
+    jeu.jouer(2,1);
+    jeu.jouer(2,2);
     
-    REQUIRE(jeu.getStatus() == Status::Egalite);
+    REQUIRE(jeu.detectionEgalite() == true);
+    
+}
+
+TEST_CASE("Saisir coup") { 
+    Jeu jeu;
+    
+    REQUIRE(jeu.detectionEgalite() == true);
     
 }

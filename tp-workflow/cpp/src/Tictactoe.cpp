@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Tictactoe.hpp"
 
 Jeu::Jeu() {
@@ -120,11 +121,27 @@ void Jeu::detectionVictoire(){
     
 }
 
-void Jeu::detectionEgalite(){
-    switch (getStatus()){
-        case Status::Egalite:
-            std::cout<<"Match nul Egalité"<<std::endl;
-            break;
+bool Jeu::detectionEgalite(){
+    for(int i =0; i<3;i++){
+        for(int j =0; j<3;j++){
+            if(getCell(i,j) == Cell::Vide){
+                return false;
+            }
+        }
+    }
+    return true;
+    
+}
+
+void Jeu::saisirCoup(){
+
+    int i, j;
+    std::cout<<"Saisir un coup n° ligne et n° colonne : ";
+    std::cin>>i>>j;
+    std::cout<<std::endl;
+    
+    if(getStatus()!=Status::Egalite && getStatus()!=Status::RougeGagne && getStatus()!=Status::VertGagne){
+        jouer(i,j);
     }
     
 }
